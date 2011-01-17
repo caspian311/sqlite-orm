@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<title>Score Keeper</title>
+	<title>SQLite-ORM</title>
 	<link rel="StyleSheet" href="images/main.css" type="text/css" />
 </head>
 <body>
@@ -34,11 +34,24 @@
 				</div>
 				<div class="content">
 					SQLite-ORM is an Android library that provides ORM (object relational mapping) functionality designed to give an ActiveRecord-ish feel to interacting with the SQLite on the Android.  It is currently in VERY early stages of development.  Hopefully I'll get a release soon.
+
 					<br /><br />
 
-					The quick 5 second tutorial is rather self-explanitory.  You simply create an interface that extends the DBObject interface then pass it along to the EntityManager and get back an object that is tied to your database.  Use the save method to changes to the database and use the delete method to delete that entity from the database.
+					The source code for SQLite-ORM can be found on
+				<a href="https://github.com/caspian311/sqlite-orm">GitHub</a>. Contributions are welcome!
+				</div>
+			</div>
+		</div>
 
-<pre>
+		<div class="main-column">
+			<div class="container">
+				<div class="title">
+					<a name="information">Information</a>
+				</div>
+				<div class="content">
+					The quick 5 second tutorial is rather self-explanitory.  You simply create an interface that extends the DBObject interface then pass it along to the EntityManager and get back an object that is tied to your database.  Use the save method to make changes to the database and use the delete method to delete that entity from the database.
+
+<pre class="code">
 public interface Person extends DBObject {
 	String getFirstName();
 
@@ -51,23 +64,29 @@ public interface Person extends DBObject {
 
 
 EntityManager entityManager = new EntityManager(....);
+
+// to insert...
 Person person = entityManager.create(Person.class);
+
+// to update
 person.setFirstName("Matt");
 person.setLastName("Todd");
 person.save();
 
-...
-
+// to delete
 person.delete();
 
-</pre>
+// get all the rows
+List<Person> entityManager.getAll(Person.class);
 
-					The source code for SQLite-ORM can be found on
-				<a href="https://github.com/caspian311/sqlite-orm">GitHub</a>
-				</div>
+// delete all the rows
+entityManager.deleteAll();
+
+</pre>
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>
 
