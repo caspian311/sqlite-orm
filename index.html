@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Score Keeper</title>
+	<link rel="StyleSheet" href="images/main.css" type="text/css" />
+</head>
+<body>
+	<div class="main">
+		<div class="container">
+			<div class="title"><a name="top">SQLite-ORM</a></div>
+		</div>
+
+		<div class="nav-column">
+			<div class="container">
+				<div class="title">Site</div>
+				<ul>
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="downloads.html">Download</a>
+					</li>
+					<li>
+						<a href="http://github.com/caspian311/sqlite-orm">Source</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="main-column">
+			<div class="container">
+				<div class="title">
+					<a name="information">Information</a>
+				</div>
+				<div class="content">
+					SQLite-ORM is an Android library that provides ORM (object relational mapping) functionality designed to give an ActiveRecord-ish feel to interacting with the SQLite on the Android.  It is currently in VERY early stages of development.  Hopefully I'll get a release soon.
+					<br /><br />
+
+					The quick 5 second tutorial is rather self-explanitory.  You simply create an interface that extends the DBObject interface then pass it along to the EntityManager and get back an object that is tied to your database.  Use the save method to changes to the database and use the delete method to delete that entity from the database.
+
+<pre>
+public interface Person extends DBObject {
+	String getFirstName();
+
+	void setFirstName(String firstName);
+
+	String getLastName();
+
+	void setLastName(String lastName);
+}
+
+
+EntityManager entityManager = new EntityManager(....);
+Person person = entityManager.create(Person.class);
+person.setFirstName("Matt");
+person.setLastName("Todd");
+person.save();
+
+...
+
+person.delete();
+
+</pre>
+
+					The source code for SQLite-ORM can be found on
+				<a href="https://github.com/caspian311/sqlite-orm">GitHub</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
