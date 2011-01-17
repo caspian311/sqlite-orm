@@ -1,7 +1,9 @@
 package net.todd.sqliteorm;
 
 public interface DBObject {
-	String getId();
+	long getId();
 
 	void save();
+
+	void delete();
 }
