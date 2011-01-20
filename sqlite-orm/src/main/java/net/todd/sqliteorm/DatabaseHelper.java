@@ -55,8 +55,8 @@ public class DatabaseHelper<T> {
 
 	public Map<String, Object> loadObject(long id) {
 		SQLiteDatabase database = databaseProvider.getDatabase(type);
-		Cursor cursor = database.query(TableName.getTableNameFromClass(type), null, null, null,
-				null, null, null);
+		Cursor cursor = database.query(TableName.getTableNameFromClass(type), null, "id=?",
+				new String[] { "" + id }, null, null, null);
 
 		List<Map<String, Object>> allStoredValues = getStoredValuesFromCursor(cursor);
 
