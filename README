@@ -1,6 +1,48 @@
-********************************************************************************
+--------------------------------------------------------------------------------
 sqlite-orm
-********************************************************************************
+--------------------------------------------------------------------------------
 
-This is a very basic ORM (object relational mapping) for Android 
+This is a very basic ORM (object relational mapping) for Android.
+
+Usage example:
+
+public interface Person extends DBObject {
+	String getFirstName();
+	void setFirstName(String firstName);
+	String getLastName();
+	void setLastName(String lastName);
+}
+
+
+EntityManager entityManager = new EntityManager(....);
+
+// to insert...
+Person person = entityManager.create(Person.class);
+
+// to update
+person.setFirstName("Matt");
+person.setLastName("Todd");
+person.save();
+
+// to delete
+person.delete();
+
+// get all the rows
+List entityManager.getAll(Person.class);
+
+// delete all the rows
+entityManager.deleteAll();
+
+--------------------------------------------------------------------------------
+Author
+--------------------------------------------------------------------------------
+Matt Todd (http://www.github.com/caspian311)
+
+
+--------------------------------------------------------------------------------
+Build
+--------------------------------------------------------------------------------
+To build, all you would need is to run the build script.
+
+$ ./build.sh
 
