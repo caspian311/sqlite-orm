@@ -45,7 +45,7 @@ Build
 To build, you will need to first set the location of your Android SDK in the 
 local.properties file located in the sqlite-orm-androidtest project.
 
-$ echo /path/to/android/sdk > sqlite-orm-androidtest/local.properties
+$ echo sdk.dir=/path/to/android/sdk > sqlite-orm-androidtest/local.properties
 
 Then run the build script.
 
