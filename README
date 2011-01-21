@@ -42,7 +42,12 @@ Matt Todd (http://www.github.com/caspian311)
 --------------------------------------------------------------------------------
 Build
 --------------------------------------------------------------------------------
-To build, all you would need is to run the build script.
+To build, you will need to first set the location of your Android SDK in the 
+local.properties file located in the sqlite-orm-androidtest project.
+
+$ echo /path/to/android/sdk > sqlite-orm-androidtest/local.properties
+
+Then run the build script.
 
 $ ./build.sh
 
