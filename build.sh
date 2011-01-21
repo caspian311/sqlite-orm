@@ -16,7 +16,8 @@ popd
 echo Building the sqlite-orm-???.jar file
 pushd ./sqlite-orm
 mvn package
-cp -p target/sqlite-orm*.jar ../sqlite-orm-androidtest/libs/
+mkdir ../sqlite-orm-androidtest/libs/
+cp target/sqlite-orm*.jar ../sqlite-orm-androidtest/libs/
 popd
 
 echo Building test application
